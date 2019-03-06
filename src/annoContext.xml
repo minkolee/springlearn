@@ -7,22 +7,10 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:component-scan base-package="annodemo"/>
     <context:property-placeholder location="classpath:sport.properties"/>
 
-    //普通Bean
-    <bean id="myFortuneService" class="iocdemo1.HappyFortuneService"></bean>
 
-    //构造器注入
-	<bean id="myCoach" class="iocdemo1.BaseballCoach">
-        <constructor-arg ref="myFortuneService"/>
-    </bean>
-
-    //Setter方法注入
-    <bean id="myCricketCoach" class="iocdemo1.CricketCoach">
-        <property name="fortuneService" ref="myFortuneService"/>
-        <property name="emailAddress" value="${foo.email}"/>
-        <property name="team" value="${foo.team}"/>
-    </bean>
 </beans>
 
 
