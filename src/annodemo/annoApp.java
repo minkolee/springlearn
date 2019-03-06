@@ -10,8 +10,6 @@ public class annoApp {
         System.out.println(context.getBean("cricketCoach", CricketCoach.class).getDailyFortune());
         System.out.println(context.getBean("cricketCoach", CricketCoach.class).getEmailAddress());
         System.out.println(context.getBean("cricketCoach", CricketCoach.class).getTeam());
-
-
         System.out.println(context.getBean("baseballCoach", BaseballCoach.class).getDailyFortune());
 
     }
