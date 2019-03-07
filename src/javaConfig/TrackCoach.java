@@ -1,10 +1,17 @@
-package iocdemo1;
+package javaConfig;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class TrackCoach implements Coach {
 
     private FortuneService fortuneService;
 
-    public TrackCoach(FortuneService fortuneService) {
+    @Autowired
+
+    public TrackCoach(@Qualifier("joyFortuneService") FortuneService fortuneService) {
         this.fortuneService = fortuneService;
     }
 
@@ -16,13 +23,5 @@ public class TrackCoach implements Coach {
     @Override
     public String getDailyFortune() {
         return "I am TrackCoach " + fortuneService.getFortune();
-    }
-
-    public void doMyStartupStuff() {
-        System.out.println("TrackCoach: inside init-method");
-    }
-
-    public void doMyCleanupStuff() {
-        System.out.println("TrackCoach: inside destroy-method");
     }
 }

@@ -1,9 +1,10 @@
-package annodemo;
+package javaConfig;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
@@ -13,7 +14,7 @@ public class BaseballCoach implements Coach {
 
     private FortuneService fortuneService;
 
-    public String email;
+    private String email;
 
     public BaseballCoach() {
     }
